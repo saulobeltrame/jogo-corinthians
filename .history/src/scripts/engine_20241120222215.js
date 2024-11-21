@@ -10,7 +10,7 @@ const state = {
         gameVelocity: 550,
         hitPosition: 0,
         result: 0,
-        currentTime: 35,
+        currentTime: 60,
     },
     actions:{
         timerId: setInterval(randomSquare, 550),
@@ -31,6 +31,7 @@ function countDown(){
 
 function playSound(){
     let audio = new Audio("./src/audios/Tirosniper1.mp3");
+    audio.volume = 0.1; // Reduz o volume do som
     audio.play();
 }
 
@@ -45,12 +46,10 @@ function randomSquare() {
     state.values.hitPosition = randomSquare.id;
 }
 
-function moveEnemy() {
-    state.values.timerId = setInterval(randomSquare, state.values.gameVelocity);
-}
+
 function addListenerHitBox() {
     state.view.squares.forEach((square) => {
-        square.addEventListener("mousedown", () => {
+        square.addEventListener("mousedown", () => { //usa mousedown para funcionar em dispositivos touch
             if (square.id === state.values.hitPosition) {
                 state.values.result++;
                 state.view.score.textContent = state.values.result;

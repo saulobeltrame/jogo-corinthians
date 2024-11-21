@@ -1,0 +1,74 @@
+*{
+    margin:0%;
+    padding: 0%;
+    box-sizing: border-box;
+    /*font-family: "Bebas Neue" , sans-serif;*/
+    font-family: "Press Start 2P", cursive;
+    touch-action: manipulation; /* adicionado para melhorar a resposta em dispositivos touch*/
+
+}
+body{
+    background-color: #f0f8ff;
+
+}
+.container{
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw; /* ocupa toda a largura da viewport */
+    background-image: url(../images/20170116_00_lixoindustrial.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.menu{
+    display: flex;
+    justify-content: space-around; /*distribui os itens uniformemente*/
+    align-items: center;
+    flex-wrap: wrap; /*permite quebra de linha se necessario*/
+    padding: 1rem; /* adicionado para melhorar a aparência em telas menores */
+    background-color: #000000;
+    color:rgb(255, 255, 255);
+    border-bottom: 5px solid #ff0000;
+}
+
+.menu-item {
+    text-align: center; /* centraliza o texto dentro do item do menu */
+    margin: 0.5rem; /* adiciona margem entre os itens do menu */
+}
+
+.menu h2 {
+    font-size: 1rem; /* reduz o tamanho da fonte para telas menores */
+    margin: 0.2rem; /* reduz a margem entre os títulos */
+}
+
+.panel{
+    display: flex;
+    flex-direction: column; /* coloca as linhas em coluna */
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* ocupa o espaço restante da tela */
+    width: 100%;
+
+}
+.panel-row {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 0.5rem 0; /* adiciona margem entre as linhas */
+}
+.square{
+
+    height: calc(33.33vw - 2rem ); /* tamanho responsivo baseado na largura da viewport */
+    width: calc(33.33vw - 2rem); /* tamanho responsivo baseado na largura da viewport */
+    border: 2px solid rgb(0, 0, 0);
+    background-color: #ffffff;
+    margin: 1rem;
+
+
+}
+.enemy{
+    background-image: url(../images/f73aea3ffc64c8fed5872ac0e736c656.png);
+    background-size:cover;
+    background-position: center;
+
+}

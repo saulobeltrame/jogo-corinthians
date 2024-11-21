@@ -1,0 +1,62 @@
+body{
+    background-color: #f0f8ff;
+    font-family: 'Press Start 2P', cursive; /* Fonte mais adequada para o tema */
+}
+
+.container{
+    display:flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url(../images/20170116_00_lixoindustrial.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; /* Centraliza a imagem de fundo */
+}
+
+.menu{
+    display: flex;
+    justify-content: space-around; /* Distribui os itens uniformemente */
+    align-items: center;
+    padding: 10px 0; /* Adiciona padding vertical */
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    border-bottom: 5px solid #ff0000;
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+}
+
+.menu-item {
+    text-align: center; /* Centraliza o texto dentro do item do menu */
+    margin: 10px;  /* Adiciona margem ao redor de cada item do menu */
+}
+
+.panel{
+    display: grid; /* Usa grid para melhor controle do layout */
+    grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas com tamanhos iguais */
+    gap: 10px; /* Adiciona espaçamento entre os quadrados */
+    flex-grow: 1; /* Permite que o painel ocupe o espaço restante */
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Adiciona padding ao painel */
+}
+
+.square{
+    aspect-ratio: 1/1; /* Mantém a proporção quadrada */
+    border: 2px solid black;
+    background-color: white;
+    width: auto; /* Ajusta a largura automaticamente */
+    height: auto; /* Ajusta a altura automaticamente */
+}
+
+.enemy{
+    background-image: url(../images/f73aea3ffc64c8fed5872ac0e736c656.png);
+    background-size:cover;
+    background-position: center;
+}
+
+
+
+.menu-time h2:nth-child(2),
+.menu-score h2:nth-child(2){
+    margin-top: 0.5rem; /* Reduz a margem superior */
+}

@@ -10,21 +10,22 @@ const state = {
         gameVelocity: 550,
         hitPosition: 0,
         result: 0,
-        currentTime: 35,
+        currentTime: 60,
     },
     actions:{
-        timerId: setInterval(randomSquare, 550),
-        countDownTimerId: setInterval(countDown, 1000),
+        timerId: null, // Inicializa como null
+        countDownTimerId: null, // Inicializa como null
     }
 };
+
 
 function countDown(){
     state.values.currentTime--;
     state.view.timeleft.textContent = state.values.currentTime;
 
     if(state.values.currentTime <= 0){
-        clearInterval(state.actions.countDownTimerId)
-        clearInterval(state.actions.timerId)
+        clearInterval(state.actions.countDownTimerId);
+        clearInterval(state.actions.timerId);
         alert("Seu tempo acabou! Você eliminou: " + state.values.result + " lixos");
     }
 }
@@ -39,31 +40,32 @@ function randomSquare() {
         square.classList.remove("enemy");
     });
 
-    let randomNumber = Math.floor(Math.random() * 9)
-    let randomSquare = state.view.squares[randomNumber]
-    randomSquare.classList.add("enemy")
+    let randomNumber = Math.floor(Math.random() * 9);
+    let randomSquare = state.view.squares[randomNumber];
+    randomSquare.classList.add("enemy");
     state.values.hitPosition = randomSquare.id;
 }
 
-function moveEnemy() {
-    state.values.timerId = setInterval(randomSquare, state.values.gameVelocity);
-}
+
 function addListenerHitBox() {
     state.view.squares.forEach((square) => {
-        square.addEventListener("mousedown", () => {
+        square.addEventListener("mousedown", () => { // Usa mousedown para dispositivos móveis
             if (square.id === state.values.hitPosition) {
                 state.values.result++;
                 state.view.score.textContent = state.values.result;
-                state.values.hitPosition = null
+                state.values.hitPosition = null;
                 playSound();
             }
 
-        })
-    })
+        });
+    });
 }
 
 function init() {
     addListenerHitBox();
+    state.actions.timerId = setInterval(randomSquare, state.values.gameVelocity); // Inicia o timer aqui
+    state.actions.countDownTimerId = setInterval(countDown, 1000);  // Inicia o timer aqui
+
 }
 
 

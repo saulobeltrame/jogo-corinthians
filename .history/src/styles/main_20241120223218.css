@@ -18,7 +18,7 @@ body{
     width: 100%;
     background-color: #000000;
     color:rgb(255, 255, 255);
-    border-bottom: 0.3rem solid #ff0000;
+    border-bottom: 5px solid #ff0000;
 }
 .panel{
     display: flex;
@@ -27,9 +27,9 @@ body{
 
 }
 .square{
-    height: 10rem;
-    width: 10rem;
-    border: 0.15rem solid rgb(0, 0, 0);
+    height: 150px;
+    width: 150px;
+    border: 1rem solid rgb(0, 0, 0);
     background-color: #ffffff;
 }
 .enemy{
